@@ -1,3 +1,4 @@
+# Import pydantic for defining data models and pymongo for MongoDB
 from pydantic import BaseModel
 import pymongo
 # Import traceback for error handling
@@ -6,6 +7,7 @@ import traceback
 # Import os and sys for system-related operations
 import os, sys
 import traceback  # Import traceback for error handling
+# FastAPI is a Python based web framework to make fast and efficient APIs
 from fastapi import (
     FastAPI,
     UploadFile,
@@ -14,7 +16,9 @@ from fastapi import (
 )  # Import FastAPI components for building the web application
 from fastapi.responses import JSONResponse  # Import JSONResponse for returning JSON responses
 from fastapi.middleware.cors import CORSMiddleware  # Import CORS middleware to handle Cross-Origin Resource Sharing
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+# Import langchain for building application powered by language models
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 # from langchain_community.document_loaders import S3FileLoader
@@ -22,8 +26,8 @@ from langchain_community.document_loaders import Docx2txtLoader,PyPDFLoader
 
 
 from langchain_community.callbacks import get_openai_callback
-from langchain.chains import ConversationalRetrievalChain
-
+# from langchain.chains import ConversationalRetrievalChain
+from langchain_classic.chains.conversational_retrieval.base import ConversationalRetrievalChain
 from langchain_openai import ChatOpenAI
 import gc
 
